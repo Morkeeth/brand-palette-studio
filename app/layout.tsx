@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Vibe Generator - Create Your Aesthetic Mood Board",
-  description: "Generate stunning aesthetic mood boards with personalized color palettes and inspiring quotes. Express your vibe!",
+  title: "Brand Palette Studio - Explore Startup Design Systems",
+  description: "Explore design systems, color palettes, and brand identities from the world's best startups. OpenAI, Stripe, Linear, Notion, and more!",
 };
 
 export default function RootLayout({
