@@ -1,11 +1,13 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { BRANDS, Brand, getNextBrand, getPreviousBrand, getRandomMysteryBrand } from '@/lib/brands';
 import { getFavorites, saveFavorite, removeFavorite, isFavorite } from '@/lib/localStorage';
 import { exportVibeCard } from '@/lib/export';
+import { getStoriesByBrand, getAllStories, Story } from '@/lib/stories';
 import BrandCard from '@/components/BrandCard';
+import StoryCard from '@/components/StoryCard';
 
 interface SavedBrand {
   brand: Brand;
@@ -17,6 +19,8 @@ export default function Home() {
   const [favorites, setFavorites] = useState<SavedBrand[]>([]);
   const [isBrandSaved, setIsBrandSaved] = useState(false);
   const [showGrid, setShowGrid] = useState(false);
+  const [currentStory, setCurrentStory] = useState<Story | null>(null);
+  const [showAllStories, setShowAllStories] = useState(false);
 
   // Load favorites on mount
   useEffect(() => {
@@ -99,6 +103,13 @@ export default function Home() {
     })));
   };
 
+  const handleViewBrandStories = () => {
+    const stories = getStoriesByBrand(currentBrand.id);
+    if (stories.length > 0) {
+      setCurrentStory(stories[0]);
+    }
+  };
+
   return (
     <main className="min-h-screen relative overflow-hidden">
       {/* Animated Background */}
@@ -178,6 +189,7 @@ export default function Home() {
               onPrevious={handlePrevious}
               onSave={handleSave}
               onExport={handleExport}
+              onViewStories={handleViewBrandStories}
               isSaved={isBrandSaved}
             />
           </div>
@@ -252,6 +264,16 @@ export default function Home() {
           <p>Explore design systems from iconic startups • Use ← → to navigate</p>
         </motion.footer>
       </div>
+
+      {/* Story Modal */}
+      <AnimatePresence>
+        {currentStory && (
+          <StoryCard
+            story={currentStory}
+            onClose={() => setCurrentStory(null)}
+          />
+        )}
+      </AnimatePresence>
     </main>
   );
 }

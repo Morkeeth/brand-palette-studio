@@ -1,6 +1,7 @@
 'use client';
 
 import { Brand } from '@/lib/brands';
+import { getStoriesByBrand } from '@/lib/stories';
 import { motion } from 'framer-motion';
 
 interface BrandCardProps {
@@ -9,6 +10,7 @@ interface BrandCardProps {
   onPrevious?: () => void;
   onSave?: () => void;
   onExport?: () => void;
+  onViewStories?: () => void;
   isSaved?: boolean;
 }
 
@@ -18,8 +20,10 @@ export default function BrandCard({
   onPrevious,
   onSave,
   onExport,
+  onViewStories,
   isSaved,
 }: BrandCardProps) {
+  const stories = getStoriesByBrand(brand.id);
   return (
     <motion.div
       key={brand.id}
@@ -177,6 +181,17 @@ export default function BrandCard({
 
         {/* Action Buttons */}
         <div className="flex gap-4 flex-1 justify-center flex-wrap">
+          {stories.length > 0 && onViewStories && (
+            <button
+              onClick={onViewStories}
+              className="px-6 py-3 bg-gradient-to-r from-amber-500/20 to-orange-500/20 hover:from-amber-500/30 hover:to-orange-500/30 backdrop-blur-md rounded-xl border-2 border-amber-400/50 text-white font-medium transition-all hover:scale-105 flex items-center gap-2"
+            >
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+              Stories ({stories.length})
+            </button>
+          )}
           {onSave && (
             <button
               onClick={onSave}
