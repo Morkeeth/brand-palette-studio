@@ -89,6 +89,7 @@ export default function BookPage({ story, pageNumber, onClose, onNext, onPreviou
                       </div>
                     </div>
                   )}
+                </div>
                 
                 {/* Category Badge Overlay */}
                 <div className="absolute top-6 left-6">
@@ -234,7 +235,7 @@ export default function BookPage({ story, pageNumber, onClose, onNext, onPreviou
 
         {/* Keyboard Hint */}
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/60 text-sm font-serif">
-          Use ← → arrow keys to turn pages • ESC to close
+          Use arrow keys to turn pages or ESC to close
         </div>
       </div>
     </motion.div>
