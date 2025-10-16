@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌈 Vibe Generator
 
-## Getting Started
+A beautiful web app that creates personalized aesthetic mood boards based on your current energy. Pick your vibe, get a gorgeous color palette with an inspiring quote, and save or share your favorites!
 
-First, run the development server:
+## ✨ Features
 
+- 🎨 **8 Unique Vibes**: Choose from Cozy, Energetic, Dreamy, Focused, Melancholic, Euphoric, Cosmic, and Midnight
+- 🎭 **Dynamic Color Palettes**: Each vibe has multiple curated color palettes with beautiful gradients
+- 💬 **Inspiring Quotes**: Carefully selected quotes that match each vibe's energy
+- 🔄 **Shuffle**: Get new combinations instantly
+- 💾 **Save Favorites**: Keep up to 20 of your favorite vibe cards
+- 📥 **Download**: Export your vibe card as a high-quality PNG image
+- 📱 **Fully Responsive**: Beautiful on desktop, tablet, and mobile
+- ✨ **Smooth Animations**: Powered by Framer Motion for delightful interactions
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18.18+ or 20.0+
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <your-repo-url>
+cd vibe-generator
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Run the development server:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-## Learn More
+## 🛠️ Built With
 
-To learn more about Next.js, take a look at the following resources:
+- **[Next.js 14](https://nextjs.org/)** - React framework with App Router
+- **[TypeScript](https://www.typescriptlang.org/)** - Type safety and better DX
+- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first styling
+- **[Framer Motion](https://www.framer.com/motion/)** - Smooth animations
+- **[html-to-image](https://github.com/bubkoo/html-to-image)** - Export cards as images
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📦 Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This app is optimized for deployment on [Vercel](https://vercel.com):
 
-## Deploy on Vercel
+1. Push your code to GitHub
+2. Import your repository on Vercel
+3. Deploy with one click!
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Or deploy via CLI:
+```bash
+npm install -g vercel
+vercel
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🎨 Customization
+
+### Adding New Vibes
+
+Edit `/lib/vibes.ts`:
+
+1. Add a new vibe to the `VIBES` array
+2. Add color palettes to `COLOR_PALETTES`
+3. Add quotes to `QUOTES`
+
+### Styling
+
+- Global styles: `/app/globals.css`
+- Component styles: Using Tailwind classes
+- Animations: Framer Motion props in components
+
+## 📝 License
+
+This project is open source and available under the MIT License.
+
+## 💖 Acknowledgments
+
+- Inspired by the aesthetic community
+- Color palettes curated for maximum vibes
+- Quotes from various inspiring minds
+
+---
+
+Made with ❤️ for aesthetic vibes
