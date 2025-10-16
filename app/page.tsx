@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { BRANDS, Brand, getNextBrand, getPreviousBrand } from '@/lib/brands';
+import { BRANDS, Brand, getNextBrand, getPreviousBrand, getRandomMysteryBrand } from '@/lib/brands';
 import { getFavorites, saveFavorite, removeFavorite, isFavorite } from '@/lib/localStorage';
 import { exportVibeCard } from '@/lib/export';
 import BrandCard from '@/components/BrandCard';
@@ -84,6 +84,13 @@ export default function Home() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const handleSurpriseMe = () => {
+    const mysteryBrand = getRandomMysteryBrand();
+    setCurrentBrand(mysteryBrand);
+    setShowGrid(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const handleRemoveFavorite = (timestamp: number) => {
     removeFavorite(timestamp);
     setFavorites(getFavorites().map((fav: any) => ({
@@ -117,12 +124,22 @@ export default function Home() {
           <p className="text-xl md:text-2xl text-white/80 max-w-2xl mx-auto mb-6">
             Explore design systems from the world's best startups
           </p>
-          <button
-            onClick={() => setShowGrid(!showGrid)}
-            className="px-6 py-3 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-xl border border-white/30 text-white font-medium transition-all hover:scale-105"
-          >
-            {showGrid ? '← Back to Brand' : 'View All Brands'}
-          </button>
+          <div className="flex gap-4 justify-center flex-wrap">
+            <button
+              onClick={() => setShowGrid(!showGrid)}
+              className="px-6 py-3 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-xl border border-white/30 text-white font-medium transition-all hover:scale-105"
+            >
+              {showGrid ? '← Back to Brand' : 'View All Brands'}
+            </button>
+            <button
+              onClick={handleSurpriseMe}
+              className="px-6 py-3 bg-gradient-to-r from-purple-500/20 to-pink-500/20 hover:from-purple-500/30 hover:to-pink-500/30 backdrop-blur-md rounded-xl border-2 border-purple-400/50 text-white font-medium transition-all hover:scale-105 flex items-center gap-2"
+            >
+              <span className="text-2xl">🎁</span>
+              Surprise Me!
+              <span className="text-xs bg-pink-500/30 px-2 py-1 rounded-full">New</span>
+            </button>
+          </div>
         </motion.div>
 
         {/* Brand Grid */}

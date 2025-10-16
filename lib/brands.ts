@@ -415,10 +415,504 @@ export const BRANDS: Brand[] = [
       author: "Framer",
     },
   },
+  {
+    id: "apple",
+    name: "Apple",
+    industry: "Technology",
+    tagline: "Think Different",
+    colors: {
+      primary: "#000000",
+      secondary: "#F5F5F7",
+      accent: "#06C",
+      background: "#FFFFFF",
+      text: "#1D1D1F",
+    },
+    gradient: "linear-gradient(135deg, #000000 0%, #F5F5F7 50%, #06C 100%)",
+    typography: {
+      heading: "SF Pro Display",
+      body: "SF Pro Text",
+      style: "Clean, premium, refined",
+    },
+    voice: {
+      tone: "Premium, simple, human",
+      principles: [
+        "Simplicity is sophistication",
+        "Design is how it works",
+        "Focus on the user",
+        "Sweat the details",
+      ],
+    },
+    quote: {
+      text: "The people who are crazy enough to think they can change the world are the ones who do.",
+      author: "Steve Jobs",
+    },
+  },
+  {
+    id: "netflix",
+    name: "Netflix",
+    industry: "Entertainment",
+    tagline: "See what's next",
+    colors: {
+      primary: "#E50914",
+      secondary: "#000000",
+      accent: "#B20710",
+      background: "#141414",
+      text: "#FFFFFF",
+    },
+    gradient: "linear-gradient(135deg, #000000 0%, #E50914 50%, #B20710 100%)",
+    typography: {
+      heading: "Netflix Sans",
+      body: "Netflix Sans",
+      style: "Bold, cinematic, immersive",
+    },
+    voice: {
+      tone: "Entertaining, bold, personal",
+      principles: [
+        "Tell great stories",
+        "Be cinematic",
+        "Personalize everything",
+        "Make it bingeable",
+      ],
+    },
+    quote: {
+      text: "Entertainment for everyone, everywhere.",
+      author: "Netflix",
+    },
+  },
+  {
+    id: "uber",
+    name: "Uber",
+    industry: "Transportation",
+    tagline: "Move the way you want",
+    colors: {
+      primary: "#000000",
+      secondary: "#FFFFFF",
+      accent: "#276EF1",
+      background: "#FFFFFF",
+      text: "#000000",
+    },
+    gradient: "linear-gradient(135deg, #000000 0%, #276EF1 50%, #FFFFFF 100%)",
+    typography: {
+      heading: "Uber Move",
+      body: "Uber Move Text",
+      style: "Modern, accessible, bold",
+    },
+    voice: {
+      tone: "Empowering, reliable, global",
+      principles: [
+        "Make movement effortless",
+        "Build for everyone",
+        "Be dependable",
+        "Think globally",
+      ],
+    },
+    quote: {
+      text: "We ignite opportunity by setting the world in motion.",
+      author: "Uber",
+    },
+  },
+  {
+    id: "shopify",
+    name: "Shopify",
+    industry: "E-commerce",
+    tagline: "Make commerce better for everyone",
+    colors: {
+      primary: "#96BF48",
+      secondary: "#5E8E3E",
+      accent: "#000000",
+      background: "#FFFFFF",
+      text: "#212326",
+    },
+    gradient: "linear-gradient(135deg, #5E8E3E 0%, #96BF48 50%, #000000 100%)",
+    typography: {
+      heading: "Shopify Sans",
+      body: "Shopify Sans",
+      style: "Friendly, trustworthy, entrepreneurial",
+    },
+    voice: {
+      tone: "Entrepreneurial, supportive, optimistic",
+      principles: [
+        "Empower entrepreneurs",
+        "Make commerce accessible",
+        "Build for scale",
+        "Celebrate merchants",
+      ],
+    },
+    quote: {
+      text: "Anyone, anywhere, can start a business.",
+      author: "Tobi Lütke, CEO",
+    },
+  },
+  {
+    id: "coinbase",
+    name: "Coinbase",
+    industry: "Crypto",
+    tagline: "The cryptoeconomy awaits",
+    colors: {
+      primary: "#0052FF",
+      secondary: "#000000",
+      accent: "#05B169",
+      background: "#FFFFFF",
+      text: "#0A0B0D",
+    },
+    gradient: "linear-gradient(135deg, #0052FF 0%, #05B169 50%, #000000 100%)",
+    typography: {
+      heading: "Coinbase Sans",
+      body: "Coinbase Sans",
+      style: "Trustworthy, modern, accessible",
+    },
+    voice: {
+      tone: "Trustworthy, educational, forward-thinking",
+      principles: [
+        "Build trust through clarity",
+        "Educate and empower",
+        "Make crypto accessible",
+        "Think long-term",
+      ],
+    },
+    quote: {
+      text: "Create an open financial system for the world.",
+      author: "Brian Armstrong, CEO",
+    },
+  },
+  {
+    id: "x",
+    name: "X (Twitter)",
+    industry: "Social",
+    tagline: "What's happening?!",
+    colors: {
+      primary: "#000000",
+      secondary: "#FFFFFF",
+      accent: "#1D9BF0",
+      background: "#000000",
+      text: "#FFFFFF",
+    },
+    gradient: "linear-gradient(135deg, #000000 0%, #1D9BF0 50%, #FFFFFF 100%)",
+    typography: {
+      heading: "Chirp",
+      body: "Chirp",
+      style: "Bold, conversational, real-time",
+    },
+    voice: {
+      tone: "Bold, unfiltered, real-time",
+      principles: [
+        "Free speech",
+        "Real-time conversation",
+        "Global town square",
+        "Break the news",
+      ],
+    },
+    quote: {
+      text: "Blaze your glory!",
+      author: "X",
+    },
+  },
+  {
+    id: "instagram",
+    name: "Instagram",
+    industry: "Social",
+    tagline: "Capture and share the world's moments",
+    colors: {
+      primary: "#E4405F",
+      secondary: "#FCAF45",
+      accent: "#833AB4",
+      background: "#FFFFFF",
+      text: "#000000",
+    },
+    gradient: "linear-gradient(135deg, #833AB4 0%, #E4405F 50%, #FCAF45 100%)",
+    typography: {
+      heading: "Instagram Sans",
+      body: "Helvetica Neue",
+      style: "Visual, vibrant, authentic",
+    },
+    voice: {
+      tone: "Creative, authentic, visual-first",
+      principles: [
+        "Express yourself",
+        "Capture moments",
+        "Build community",
+        "Be authentic",
+      ],
+    },
+    quote: {
+      text: "Bringing you closer to the people and things you love.",
+      author: "Instagram",
+    },
+  },
+];
+
+// 🎁 MYSTERY BRANDS - Emerging & Cool New Apps
+// These rotate as surprises - users won't see them in the grid!
+export const MYSTERY_BRANDS: Brand[] = [
+  {
+    id: "raycast",
+    name: "Raycast",
+    industry: "Productivity",
+    tagline: "Your shortcut to everything",
+    colors: {
+      primary: "#FF6363",
+      secondary: "#000000",
+      accent: "#FF8989",
+      background: "#1C1C1E",
+      text: "#FFFFFF",
+    },
+    gradient: "linear-gradient(135deg, #000000 0%, #FF6363 50%, #FF8989 100%)",
+    typography: {
+      heading: "SF Pro Display",
+      body: "SF Pro Text",
+      style: "Fast, powerful, native",
+    },
+    voice: {
+      tone: "Fast, powerful, efficiency-obsessed",
+      principles: [
+        "Speed is everything",
+        "Keyboard-first",
+        "Extensible by default",
+        "Native performance",
+      ],
+    },
+    quote: {
+      text: "Your shortcut to everything.",
+      author: "Raycast",
+    },
+  },
+  {
+    id: "arc",
+    name: "Arc",
+    industry: "Browser",
+    tagline: "Browse beautifully",
+    colors: {
+      primary: "#FC5C54",
+      secondary: "#5865F2",
+      accent: "#FFD02D",
+      background: "#FFFFFF",
+      text: "#000000",
+    },
+    gradient: "linear-gradient(135deg, #FC5C54 0%, #5865F2 50%, #FFD02D 100%)",
+    typography: {
+      heading: "Inter",
+      body: "Inter",
+      style: "Modern, delightful, experimental",
+    },
+    voice: {
+      tone: "Playful, innovative, user-centric",
+      principles: [
+        "Rethink browsing",
+        "Design for delight",
+        "Make it personal",
+        "Question everything",
+      ],
+    },
+    quote: {
+      text: "The browser that browses for you.",
+      author: "The Browser Company",
+    },
+  },
+  {
+    id: "replicate",
+    name: "Replicate",
+    industry: "AI",
+    tagline: "Machine learning without the hassle",
+    colors: {
+      primary: "#000000",
+      secondary: "#FFFFFF",
+      accent: "#2DD4BF",
+      background: "#FFFFFF",
+      text: "#0F172A",
+    },
+    gradient: "linear-gradient(135deg, #000000 0%, #2DD4BF 50%, #FFFFFF 100%)",
+    typography: {
+      heading: "Inter",
+      body: "Inter",
+      style: "Technical, accessible, modern",
+    },
+    voice: {
+      tone: "Technical, accessible, empowering",
+      principles: [
+        "Make AI accessible",
+        "Developer-first",
+        "Open and transparent",
+        "Production-ready",
+      ],
+    },
+    quote: {
+      text: "Run AI with an API.",
+      author: "Replicate",
+    },
+  },
+  {
+    id: "cursor",
+    name: "Cursor",
+    industry: "AI/Dev Tools",
+    tagline: "The AI-first code editor",
+    colors: {
+      primary: "#000000",
+      secondary: "#0066FF",
+      accent: "#00BFFF",
+      background: "#FFFFFF",
+      text: "#000000",
+    },
+    gradient: "linear-gradient(135deg, #000000 0%, #0066FF 50%, #00BFFF 100%)",
+    typography: {
+      heading: "Inter",
+      body: "Monaco",
+      style: "Technical, clean, powerful",
+    },
+    voice: {
+      tone: "Innovative, empowering, developer-focused",
+      principles: [
+        "AI-native from day one",
+        "Speed matters",
+        "Augment, don't replace",
+        "Build the future",
+      ],
+    },
+    quote: {
+      text: "Write code at the speed of thought.",
+      author: "Cursor",
+    },
+  },
+  {
+    id: "cal",
+    name: "Cal.com",
+    industry: "Scheduling",
+    tagline: "Scheduling infrastructure for everyone",
+    colors: {
+      primary: "#292929",
+      secondary: "#FFFFFF",
+      accent: "#E1E1E1",
+      background: "#FFFFFF",
+      text: "#111111",
+    },
+    gradient: "linear-gradient(135deg, #292929 0%, #E1E1E1 50%, #FFFFFF 100%)",
+    typography: {
+      heading: "Cal Sans",
+      body: "Inter",
+      style: "Clean, professional, open",
+    },
+    voice: {
+      tone: "Open, professional, user-first",
+      principles: [
+        "Open source first",
+        "Privacy by design",
+        "Simple and powerful",
+        "Build for everyone",
+      ],
+    },
+    quote: {
+      text: "Scheduling for absolutely everyone.",
+      author: "Cal.com",
+    },
+  },
+  {
+    id: "midjourney",
+    name: "Midjourney",
+    industry: "AI/Art",
+    tagline: "Exploring new mediums of thought",
+    colors: {
+      primary: "#000000",
+      secondary: "#FFFFFF",
+      accent: "#7B68EE",
+      background: "#0F0F0F",
+      text: "#FFFFFF",
+    },
+    gradient: "linear-gradient(135deg, #000000 0%, #7B68EE 50%, #C71585 100%)",
+    typography: {
+      heading: "SF Pro Display",
+      body: "SF Pro Text",
+      style: "Artistic, mysterious, experimental",
+    },
+    voice: {
+      tone: "Artistic, mysterious, exploratory",
+      principles: [
+        "Expand imagination",
+        "Embrace the unknown",
+        "Art meets AI",
+        "Create magic",
+      ],
+    },
+    quote: {
+      text: "Exploring new mediums of thought.",
+      author: "Midjourney",
+    },
+  },
+  {
+    id: "loom",
+    name: "Loom",
+    industry: "Video/Communication",
+    tagline: "Work async, ship faster",
+    colors: {
+      primary: "#625DF5",
+      secondary: "#FF4646",
+      accent: "#00DDB3",
+      background: "#FFFFFF",
+      text: "#1D1D21",
+    },
+    gradient: "linear-gradient(135deg, #625DF5 0%, #FF4646 50%, #00DDB3 100%)",
+    typography: {
+      heading: "Circular",
+      body: "Circular",
+      style: "Friendly, vibrant, approachable",
+    },
+    voice: {
+      tone: "Friendly, efficient, async-first",
+      principles: [
+        "Show, don't just tell",
+        "Async by default",
+        "Respect time",
+        "Make work human",
+      ],
+    },
+    quote: {
+      text: "Video messages for work.",
+      author: "Loom",
+    },
+  },
+  {
+    id: "superhuman",
+    name: "Superhuman",
+    industry: "Email/Productivity",
+    tagline: "The fastest email experience ever made",
+    colors: {
+      primary: "#000000",
+      secondary: "#FFFFFF",
+      accent: "#00A4FF",
+      background: "#FFFFFF",
+      text: "#000000",
+    },
+    gradient: "linear-gradient(135deg, #000000 0%, #00A4FF 50%, #FFFFFF 100%)",
+    typography: {
+      heading: "Inter",
+      body: "Inter",
+      style: "Premium, fast, refined",
+    },
+    voice: {
+      tone: "Premium, fast, obsessive about details",
+      principles: [
+        "Speed is everything",
+        "Keyboard shortcuts",
+        "Beautiful design",
+        "Email shouldn't suck",
+      ],
+    },
+    quote: {
+      text: "Get through your inbox twice as fast.",
+      author: "Superhuman",
+    },
+  },
 ];
 
 export function getBrand(id: string): Brand | undefined {
   return BRANDS.find((brand) => brand.id === id);
+}
+
+export function getMysteryBrand(id: string): Brand | undefined {
+  return MYSTERY_BRANDS.find((brand) => brand.id === id);
+}
+
+export function getRandomMysteryBrand(): Brand {
+  const randomIndex = Math.floor(Math.random() * MYSTERY_BRANDS.length);
+  return MYSTERY_BRANDS[randomIndex];
 }
 
 export function getNextBrand(currentId: string): Brand {
