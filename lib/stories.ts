@@ -10,6 +10,7 @@ export interface Story {
   impact: string;
   lesson: string;
   imageDescription: string;
+  imageUrl?: string; // Real product screenshot URL
   details: string[];
   relatedBrands?: string[];
 }

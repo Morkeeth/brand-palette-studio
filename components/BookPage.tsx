@@ -69,16 +69,27 @@ export default function BookPage({ story, pageNumber, onClose, onNext, onPreviou
               {/* Hero Image Section */}
               <div className="relative h-[40%] overflow-hidden bg-gradient-to-br from-neutral-100 to-neutral-200">
                 <div className="absolute inset-0 flex items-center justify-center">
-                  {/* Placeholder for actual product screenshot */}
-                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-neutral-200 to-neutral-300">
-                    <div className="text-center p-8">
-                      <div className="text-8xl mb-4">{categoryBadges[story.category].icon}</div>
-                      <p className="text-neutral-600 text-sm font-medium max-w-md">
-                        {story.imageDescription}
-                      </p>
+                  {story.imageUrl ? (
+                    /* Real Product Screenshot */
+                    <div className="relative w-full h-full">
+                      <img 
+                        src={story.imageUrl}
+                        alt={story.imageDescription}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                     </div>
-                  </div>
-                </div>
+                  ) : (
+                    /* Placeholder with illustration */
+                    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-neutral-200 to-neutral-300">
+                      <div className="text-center p-8">
+                        <div className="text-8xl mb-4">{categoryBadges[story.category].icon}</div>
+                        <p className="text-neutral-600 text-sm font-medium max-w-md">
+                          {story.imageDescription}
+                        </p>
+                      </div>
+                    </div>
+                  )}
                 
                 {/* Category Badge Overlay */}
                 <div className="absolute top-6 left-6">
