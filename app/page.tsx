@@ -7,7 +7,7 @@ import { getFavorites, saveFavorite, removeFavorite, isFavorite } from '@/lib/lo
 import { exportVibeCard } from '@/lib/export';
 import { getStoriesByBrand, getAllStories, Story } from '@/lib/stories';
 import BrandCard from '@/components/BrandCard';
-import StoryCard from '@/components/StoryCard';
+import BookPage from '@/components/BookPage';
 
 interface SavedBrand {
   brand: Brand;
@@ -19,8 +19,8 @@ export default function Home() {
   const [favorites, setFavorites] = useState<SavedBrand[]>([]);
   const [isBrandSaved, setIsBrandSaved] = useState(false);
   const [showGrid, setShowGrid] = useState(false);
-  const [currentStory, setCurrentStory] = useState<Story | null>(null);
-  const [showAllStories, setShowAllStories] = useState(false);
+  const [currentStoryIndex, setCurrentStoryIndex] = useState<number | null>(null);
+  const [brandStories, setBrandStories] = useState<Story[]>([]);
 
   // Load favorites on mount
   useEffect(() => {
@@ -40,18 +40,30 @@ export default function Home() {
   // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowLeft') {
-        handlePrevious();
-      } else if (e.key === 'ArrowRight') {
-        handleNext();
-      } else if (e.key === 'g') {
-        setShowGrid(!showGrid);
+      // If viewing a story, handle story navigation
+      if (currentStoryIndex !== null) {
+        if (e.key === 'ArrowLeft') {
+          handlePreviousStory();
+        } else if (e.key === 'ArrowRight') {
+          handleNextStory();
+        } else if (e.key === 'Escape') {
+          setCurrentStoryIndex(null);
+        }
+      } else {
+        // Normal brand navigation
+        if (e.key === 'ArrowLeft') {
+          handlePrevious();
+        } else if (e.key === 'ArrowRight') {
+          handleNext();
+        } else if (e.key === 'g') {
+          setShowGrid(!showGrid);
+        }
       }
     };
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [currentBrand, showGrid]);
+  }, [currentBrand, showGrid, currentStoryIndex, brandStories]);
 
   const handleNext = () => {
     setCurrentBrand(getNextBrand(currentBrand.id));
@@ -106,7 +118,22 @@ export default function Home() {
   const handleViewBrandStories = () => {
     const stories = getStoriesByBrand(currentBrand.id);
     if (stories.length > 0) {
-      setCurrentStory(stories[0]);
+      setBrandStories(stories);
+      setCurrentStoryIndex(0);
+    }
+  };
+
+  const handleNextStory = () => {
+    if (currentStoryIndex !== null && brandStories.length > 0) {
+      if (currentStoryIndex < brandStories.length - 1) {
+        setCurrentStoryIndex(currentStoryIndex + 1);
+      }
+    }
+  };
+
+  const handlePreviousStory = () => {
+    if (currentStoryIndex !== null && currentStoryIndex > 0) {
+      setCurrentStoryIndex(currentStoryIndex - 1);
     }
   };
 
@@ -265,12 +292,15 @@ export default function Home() {
         </motion.footer>
       </div>
 
-      {/* Story Modal */}
+      {/* Book Page Modal */}
       <AnimatePresence>
-        {currentStory && (
-          <StoryCard
-            story={currentStory}
-            onClose={() => setCurrentStory(null)}
+        {currentStoryIndex !== null && brandStories[currentStoryIndex] && (
+          <BookPage
+            story={brandStories[currentStoryIndex]}
+            pageNumber={currentStoryIndex + 1}
+            onClose={() => setCurrentStoryIndex(null)}
+            onNext={currentStoryIndex < brandStories.length - 1 ? handleNextStory : undefined}
+            onPrevious={currentStoryIndex > 0 ? handlePreviousStory : undefined}
           />
         )}
       </AnimatePresence>
