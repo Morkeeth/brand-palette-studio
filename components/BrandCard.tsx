@@ -141,7 +141,7 @@ export default function BrandCard({
           >
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
               <p className="text-white text-2xl font-light italic leading-relaxed mb-4">
-                "{brand.quote.text}"
+                &ldquo;{brand.quote.text}&rdquo;
               </p>
               <p className="text-white/70 text-sm font-medium">— {brand.quote.author}</p>
             </div>

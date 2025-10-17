@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { BRANDS, Brand, getNextBrand, getPreviousBrand, getRandomMysteryBrand } from '@/lib/brands';
 import { getFavorites, saveFavorite, removeFavorite, isFavorite } from '@/lib/localStorage';
 import { exportVibeCard } from '@/lib/export';
-import { getStoriesByBrand, getAllStories, Story } from '@/lib/stories';
+import { getStoriesByBrand, Story } from '@/lib/stories';
 import BrandCard from '@/components/BrandCard';
 import BookPage from '@/components/BookPage';
 
@@ -26,10 +26,13 @@ export default function Home() {
   useEffect(() => {
     const savedFavs = getFavorites();
     // Convert old format to new brand format
-    setFavorites(savedFavs.map((fav: any) => ({
-      brand: fav.vibe ? BRANDS[0] : fav.brand || BRANDS[0],
-      timestamp: fav.timestamp,
-    })));
+    setFavorites(savedFavs.map((fav) => {
+      const savedBrand = fav as unknown as SavedBrand;
+      return {
+        brand: savedBrand.brand || BRANDS[0],
+        timestamp: fav.timestamp,
+      };
+    }));
   }, []);
 
   // Check if current brand is saved
@@ -79,12 +82,15 @@ export default function Home() {
         brand: currentBrand,
         timestamp: currentBrand.id.hashCode(),
       };
-      const success = saveFavorite(saved as any);
+      const success = saveFavorite(saved as never);
       if (success) {
-        setFavorites(getFavorites().map((fav: any) => ({
-          brand: fav.brand || BRANDS[0],
-          timestamp: fav.timestamp,
-        })));
+        setFavorites(getFavorites().map((fav) => {
+          const savedBrand = fav as unknown as SavedBrand;
+          return {
+            brand: savedBrand.brand || BRANDS[0],
+            timestamp: fav.timestamp,
+          };
+        }));
         setIsBrandSaved(true);
       }
     }
@@ -109,10 +115,13 @@ export default function Home() {
 
   const handleRemoveFavorite = (timestamp: number) => {
     removeFavorite(timestamp);
-    setFavorites(getFavorites().map((fav: any) => ({
-      brand: fav.brand || BRANDS[0],
-      timestamp: fav.timestamp,
-    })));
+    setFavorites(getFavorites().map((fav) => {
+      const savedBrand = fav as unknown as SavedBrand;
+      return {
+        brand: savedBrand.brand || BRANDS[0],
+        timestamp: fav.timestamp,
+      };
+    }));
   };
 
   const handleViewBrandStories = () => {
@@ -160,7 +169,7 @@ export default function Home() {
             Brand Palette Studio
           </h1>
           <p className="text-xl md:text-2xl text-white/80 max-w-2xl mx-auto mb-6">
-            Explore design systems from the world's best startups
+            Explore design systems from the world&apos;s best startups
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
             <button

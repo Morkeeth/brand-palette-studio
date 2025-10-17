@@ -77,7 +77,7 @@ export default function VibeCard({ card, onShuffle, onSave, onExport, isSaved }:
           >
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
               <p className="text-white text-xl md:text-2xl font-light italic leading-relaxed mb-4">
-                "{card.quote.text}"
+                &ldquo;{card.quote.text}&rdquo;
               </p>
               {card.quote.author && (
                 <p className="text-white/70 text-sm font-medium">— {card.quote.author}</p>

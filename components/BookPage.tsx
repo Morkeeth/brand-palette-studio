@@ -126,7 +126,7 @@ export default function BookPage({ story, pageNumber, onClose, onNext, onPreviou
                 {/* Pull Quote */}
                 <div className="my-12 p-8 bg-neutral-50 rounded-lg border-l-4 border-neutral-900">
                   <p className="text-2xl font-serif italic text-neutral-800 leading-relaxed">
-                    "{story.lesson.split('.')[0]}."
+                    &ldquo;{story.lesson.split('.')[0]}.&rdquo;
                   </p>
                 </div>
               </div>
