@@ -1,5 +1,13 @@
 # 🌈 Vibe Generator
 
+**Brand Palette Studio lets you explore the design systems, colour palettes and brand identities of well-known startups, save the ones you like, and read short stories from tech history beside them.**
+
+- For: designers and founders choosing a palette.
+- What the code does: `lib/brands.ts` holds 27 brands (OpenAI, Stripe, Linear, Notion and more), favourites persist in localStorage, and `BookPage` renders 12 stories from `lib/stories.ts`.
+- Note: the README below describes the earlier "Vibe Generator" version of the same codebase.
+- Try it: `npm install && npm run dev`. Early experiment, October 2025.
+
+
 A beautiful web app that creates personalized aesthetic mood boards based on your current energy. Pick your vibe, get a gorgeous color palette with an inspiring quote, and save or share your favorites!
 
 ## ✨ Features
