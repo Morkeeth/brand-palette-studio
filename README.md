@@ -1,4 +1,23 @@
-# 🌈 Vibe Generator
+# Brand Palette Studio
+
+## TLDR
+
+Explore brand palettes, save favourites and read accompanying stories from tech history.<br>
+For designers and founders looking for concrete visual references.<br>
+This code evolved from Vibe Generator; the older instructions below retain that earlier context.
+
+## The problem and approach
+
+- What the code does: `lib/brands.ts` holds 27 brands (OpenAI, Stripe, Linear, Notion and more), favourites persist in localStorage, and `BookPage` renders 12 stories from `lib/stories.ts`.
+
+## Review and pick up the work
+
+[Agent guide](AGENTS.md)
+
+Start with the linked source, setup and evidence. Recorded demos and sample data keep their original scope; use the repository instructions for a fresh run.
+
+<details>
+<summary>Earlier Vibe Generator instructions, retained as history</summary>
 
 A beautiful web app that creates personalized aesthetic mood boards based on your current energy. Pick your vibe, get a gorgeous color palette with an inspiring quote, and save or share your favorites!
 
@@ -91,3 +110,9 @@ This project is open source and available under the MIT License.
 ---
 
 Made with ❤️ for aesthetic vibes
+
+</details>
+
+## License and data boundaries
+
+This checkout has no root license file establishing general reuse rights. Data, provider responses, media, fonts and other third-party assets may have separate terms. Repository access alone does not grant rights to those materials. 
